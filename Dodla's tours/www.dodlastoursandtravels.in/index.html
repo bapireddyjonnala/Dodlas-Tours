@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dodla's Tours & Travels — Yatra Specialists Since 1962 | Vijayawada</title>
+  <meta name="description" content="India's premier pilgrimage tour operator from Vijayawada. 108 Divya Desam, Chardham, Amarnath, Kailash Manasarovar, Ganga Sagar, Muktinath & more. Est. 1962." />
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       GLOBAL RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:      #E8521A;
+      --primary-dark: #bf3e0e;
+      --secondary:    #1A3A5C;
+      --secondary-dark:#0f2540;
+      --accent:       #F5A623;
+      --accent-light: #FFD166;
+      --bg:           #FFFFFF;
+      --bg-light:     #F8F9FA;
+      --bg-warm:      #FFF8F5;
+      --text:         #1E2A35;
+      --text-muted:   #6B7280;
+      --shadow-sm:    0 2px 12px rgba(0,0,0,.07);
+      --shadow-md:    0 8px 32px rgba(0,0,0,.11);
+      --shadow-lg:    0 24px 64px rgba(0,0,0,.14);
+      --shadow-xl:    0 40px 100px rgba(0,0,0,.18);
+      --radius:       18px;
+      --radius-sm:    10px;
+      --radius-xs:    6px;
+      --transition:   .32s cubic-bezier(.4,0,.2,1);
+      --transition-slow: .6s cubic-bezier(.4,0,.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito Sans', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3,h4,h5,h6,
+    .navbar-brand,
+    .btn,
+    .section-title,
+    .stat-number { font-family: 'Poppins', sans-serif; }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .section-pad { padding: 90px 0; }
+    .section-title {
+      font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+      font-weight: 800;
+      color: var(--secondary);
+      margin-bottom: 10px;
+      letter-spacing: -.02em;
+      line-height: 1.15;
+    }
+    .section-title span { color: var(--primary); }
+    .title-underline {
+      width: 56px; height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 99px;
+      margin-bottom: 52px;
+    }
+    .section-sub {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin-bottom: 10px;
+      line-height: 1.7;
+    }
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: linear-gradient(135deg, rgba(232,82,26,.12), rgba(245,166,35,.08));
+      color: var(--primary);
+      border: 1px solid rgba(232,82,26,.2);
+      padding: 6px 18px; border-radius: 50px;
+      font-size: .72rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .1em;
+      margin-bottom: 14px;
+    }
+
+    .btn-primary-custom {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #fff; border: none;
+      padding: 15px 36px; border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700; font-size: .95rem;
+      cursor: pointer; transition: var(--transition);
+      box-shadow: 0 6px 24px rgba(232,82,26,.4);
+      position: relative; overflow: hidden;
+      letter-spacing: .02em;
+    }
+    .btn-primary-custom::after {
+      content: '';
+      position: absolute; top: 0; left: -100%;
+      width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+      transition: left .5s ease;
+    }
+    .btn-primary-custom:hover::after { left: 160%; }
+    .btn-primary-custom:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(232,82,26,.55);
+      color: #fff;
+    }
+    .btn-outline-custom {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,.12);
+      color: #fff; border: 2px solid rgba(255,255,255,.8);
+      padding: 13px 32px; border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600; font-size: .95rem;
+      cursor: pointer; transition: var(--transition);
+      backdrop-filter: blur(8px);
+      letter-spacing: .02em;
+    }
+    .btn-outline-custom:hover {
+      background: rgba(255,255,255,.22);
+      border-color: #fff;
+      transform: translateY(-3px);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,.2);
+    }
+
+    /* ============================================================
+       TOP BAR
+    ============================================================ */
+    #top-bar {
+      background: linear-gradient(90deg, var(--secondary-dark) 0%, var(--secondary) 100%);
+      color: #fff;
+      font-size: .78rem;
+      padding: 8px 0;
+      font-family: 'Nunito Sans', sans-serif;
+      letter-spacing: .02em;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    #top-bar a { color: rgba(255,255,255,.85); transition: color .2s; }
+    #top-bar a:hover { color: var(--accent-light); }
+    #top-bar .tb-right { text-align: right; color: var(--accent); font-weight: 700; letter-spacing: .04em; }
+
+    /* ============================================================
+       NAVBAR
+    ============================================================ */
+    #mainNav {
+      background: rgba(255,255,255,.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: none;
+      transition: box-shadow .35s, padding .35s;
+      padding: 12px 0;
+      position: sticky; top: 0; z-index: 999;
+      border-bottom: 1px solid rgba(26,58,92,.06);
+    }
+    #mainNav.scrolled {
+      box-shadow: 0 4px 32px rgba(26,58,92,.12);
+      padding: 8px 0;
+      border-bottom-color: transparent;
+    }
+
+    .navbar-brand-wrap .brand-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), #c94010);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -.5px;
+      line-height: 1;
+    }
+    .navbar-brand-wrap .brand-tag {
+      font-size: .66rem;
+      color: var(--text-muted);
+      font-family: 'Nunito Sans', sans-serif;
+      font-weight: 600;
+      letter-spacing: .05em;
+    }
+
+    .navbar-nav .nav-link {
+      font-family: 'Poppins', sans-serif;
+      font-size: .86rem;
+      font-weight: 600;
+      color: var(--secondary) !important;
+      padding: 8px 14px !important;
+      border-radius: var(--radius-xs);
+      transition: color .2s, background .2s;
+      position: relative;
+    }
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute; bottom: 2px; left: 50%; right: 50%;
+      height: 2px; background: var(--primary);
+      border-radius: 99px; transition: left .25s, right .25s;
+    }
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link.active::after { left: 14px; right: 14px; }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active { color: var(--primary) !important; background: rgba(232,82,26,.06); }
+
+    .dropdown-menu {
+      border: none; border-radius: var(--radius-sm);
+      box-shadow: 0 16px 48px rgba(26,58,92,.14);
+      padding: 10px 0; min-width: 240px;
+      border-top: 3px solid var(--primary);
+      animation: dropIn .2s ease;
+    }
+    @keyframes dropIn { from { opacity:0; transform:translateY(-6px) } to { opacity:1; transform:translateY(0) } }
+    .dropdown-item {
+      font-size: .84rem; font-family: 'Poppins', sans-serif;
+      font-weight: 500; padding: 10px 20px;
+      color: var(--secondary); transition: .2s;
+    }
+    .dropdown-item:hover { background: rgba(232,82,26,.08); color: var(--primary); padding-left: 26px; }
+
+    .btn-book-now {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff; border: none;
+      padding: 10px 26px; border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700; font-size: .84rem;
+      cursor: pointer; transition: var(--transition);
+      box-shadow: 0 4px 18px rgba(232,82,26,.32);
+      white-space: nowrap; letter-spacing: .02em;
+      position: relative; overflow: hidden;
+    }
+    .btn-book-now::after {
+      content: '';
+      position: absolute; top:0; left:-80%;
+      width:50%; height:100%;
+      background: linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
+      transition: left .4s;
+    }
+    .btn-book-now:hover::after { left: 160%; }
+    .btn-book-now:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(232,82,26,.48);
+      color: #fff;
+    }
+
+    .navbar-toggler { border: none; padding: 4px 8px; }
+    .navbar-toggler:focus { box-shadow: none; }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%231A3A5C' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* ============================================================
+       HERO SECTION
+    ============================================================ */
+    /* Hero Slideshow */
+    #hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+    .hero-slide {
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center center;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out, transform 8s ease;
+      transform: scale(1.05);
+      z-index: 0;
+    }
+    .hero-slide.active {
+      opacity: 1;
+      transform: scale(1);
+      z-index: 1;
+    }
+    .hero-slide::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(100deg,
+        rgba(26,58,92,.92) 0%,
+        rgba(26,58,92,.75) 40%,
+        rgba(26,58,92,.2) 70%,
+        transparent 100%);
+      z-index: 2;
+    }
+    #hero .hero-content { position: relative; z-index: 10; }
+    #hero > .container { position: relative; z-index: 10; }
+
+    /* Slide dots */
+    .hero-dots {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 10px; z-index: 10;
+    }
+    .hero-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: rgba(255,255,255,.4); border: none; cursor: pointer;
+      transition: background .3s, transform .3s;
+      padding: 0;
+    }
+    .hero-dot.active { background: var(--accent); transform: scale(1.3); }
+
+    /* Slide counter */
+    .hero-counter {
+      position: absolute; bottom: 32px; right: 40px;
+      color: rgba(255,255,255,.6); font-size: .78rem;
+      font-family: 'Poppins', sans-serif; font-weight: 600;
+      letter-spacing: .1em; z-index: 10;
+    }
+    .hero-counter span { color: #fff; }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, rgba(245,166,35,.22), rgba(245,166,35,.1));
+      border: 1px solid rgba(245,166,35,.5);
+      color: var(--accent-light);
+      padding: 8px 20px; border-radius: 50px;
+      font-size: .75rem; font-weight: 800;
+      letter-spacing: .1em; text-transform: uppercase;
+      margin-bottom: 24px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 16px rgba(245,166,35,.15);
+    }
+    .hero-badge i { color: var(--accent); font-size: .85rem; }
+
+    .hero-h1 {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 22px;
+      text-shadow: 0 4px 32px rgba(0,0,0,.35);
+      letter-spacing: -.02em;
+      transition: opacity .4s ease;
+    }
+    .hero-h1 span {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 1.6vw, 1.18rem);
+      color: rgba(255,255,255,.88);
+      max-width: 500px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+      text-shadow: 0 1px 8px rgba(0,0,0,.2);
+      transition: opacity .4s ease;
+    }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+    /* Quick Search Card — always on top, never affected by slide transitions */
+    .quick-search-card {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 32px 80px rgba(0,0,0,.24), 0 0 0 1px rgba(255,255,255,.5);
+      padding: 36px 32px;
+      position: relative;
+      z-index: 20;
+      isolation: isolate;
+      will-change: auto;
+      border-top: 4px solid var(--primary);
+    }
+    .quick-search-card h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.15rem; font-weight: 800;
+      color: var(--secondary);
+      margin-bottom: 24px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .quick-search-card h4 i {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff; padding: 8px; border-radius: 8px; font-size: .9rem;
+    }
+    .quick-search-card h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--secondary);
+      margin-bottom: 20px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .qs-label {
+      font-size: .78rem; font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: .06em;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .qs-select, .qs-input {
+      width: 100%; border: 1.5px solid #E5E7EB;
+      border-radius: var(--radius-sm);
+      padding: 11px 14px; font-size: .9rem;
+      font-family: 'Nunito Sans', sans-serif;
+      color: var(--text);
+      transition: border-color .2s;
+      background: #FAFAFA;
+    }
+    .qs-select:focus, .qs-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: #fff;
+    }
+    .qs-btn {
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary), #c94010);
+      color: #fff; border: none;
+      padding: 14px; border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700; font-size: .95rem;
+      cursor: pointer; transition: var(--transition);
+      box-shadow: 0 4px 20px rgba(232,82,26,.35);
+    }
+    .qs-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,82,26,.5); }
+
+    /* Hero wave */
+    .hero-wave {
+      position: absolute; bottom: -1px; left: 0; width: 100%; z-index: 3;
+    }
+
+    /* ============================================================
+       STATS STRIP
+    ============================================================ */
+    #stats {
+      background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--secondary) 60%, #1f4a74 100%);
+      padding: 56px 0;
+      position: relative; z-index: 2;
+      overflow: hidden;
+    }
+    #stats::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .stat-item { text-align: center; position: relative; z-index: 1; }
+    .stat-icon {
+      font-size: 1.8rem; color: var(--accent);
+      margin-bottom: 10px; display: block;
+      opacity: .85;
+    }
+    .stat-number {
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-weight: 900;
+      color: #fff;
+      display: block;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-suffix { color: var(--accent); }
+    .stat-label {
+      color: rgba(255,255,255,.75);
+      font-size: .82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .stat-divider {
+      width: 1px; background: rgba(255,255,255,.1);
+      height: 70px; margin: auto;
+    }
+
+    /* ============================================================
+       FEATURED TOURS
+    ============================================================ */
+    #tours { background: var(--bg-light); }
+
+    .tour-card {
+      background: #fff;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-slow);
+      height: 100%;
+      display: flex; flex-direction: column;
+      border: 1.5px solid rgba(26,58,92,.06);
+    }
+    .tour-card:hover {
+      transform: translateY(-12px);
+      box-shadow: var(--shadow-xl);
+      border-color: rgba(232,82,26,.15);
+    }
+    .tour-card:hover .tour-img { transform: scale(1.08); }
+    .tour-card:hover .tour-link { gap: 12px; }
+
+    .tour-img-wrap {
+      height: 220px; overflow: hidden; position: relative;
+    }
+    .tour-img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .6s ease;
+    }
+    .tour-badge-category {
+      position: absolute; top: 14px; left: 14px;
+      background: linear-gradient(135deg, var(--primary), #c94010);
+      color: #fff; font-size: .72rem; font-weight: 700;
+      padding: 5px 12px; border-radius: 50px;
+      text-transform: uppercase; letter-spacing: .05em;
+      font-family: 'Poppins', sans-serif;
+    }
+    .tour-badge-duration {
+      position: absolute; top: 14px; right: 14px;
+      background: rgba(26,58,92,.88);
+      color: #fff; font-size: .75rem; font-weight: 600;
+      padding: 5px 12px; border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      backdrop-filter: blur(6px);
+    }
+    .tour-body {
+      padding: 24px;
+      flex: 1; display: flex; flex-direction: column;
+    }
+    .tour-title {
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--secondary); margin-bottom: 8px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .tour-desc {
+      font-size: .88rem; color: var(--text-muted);
+      line-height: 1.6; margin-bottom: 16px; flex: 1;
+    }
+    .tour-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid #F3F4F6;
+    }
+    .tour-price {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.15rem; font-weight: 800; color: var(--primary);
+    }
+    .tour-price small { font-size: .72rem; font-weight: 500; color: var(--text-muted); display: block; }
+    .tour-link {
+      font-family: 'Poppins', sans-serif;
+      font-size: .82rem; font-weight: 700;
+      color: var(--primary);
+      display: inline-flex; align-items: center; gap: 5px;
+      transition: gap .2s;
+    }
+    .tour-link:hover { gap: 10px; color: var(--primary); }
+
+    /* ============================================================
+       WHY CHOOSE US
+    ============================================================ */
+    #why { background: #fff; }
+    .feature-card {
+      background: var(--bg-light);
+      border-radius: var(--radius);
+      padding: 32px 24px; text-align: center;
+      transition: var(--transition);
+      border: 1.5px solid transparent;
+      height: 100%;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(232,82,26,.2);
+      background: #fff;
+    }
+    .feature-icon-wrap {
+      width: 68px; height: 68px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), #c94010);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.6rem;
+      box-shadow: 0 8px 24px rgba(232,82,26,.3);
+    }
+    .feature-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--secondary); margin-bottom: 10px;
+    }
+    .feature-desc { font-size: .88rem; color: var(--text-muted); line-height: 1.65; }
+
+    /* ============================================================
+       DESTINATIONS SHOWCASE
+    ============================================================ */
+    #destinations { background: var(--bg-light); }
+    .dest-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 20px;
+    }
+    @media(max-width:768px){
+      .dest-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+    @media(max-width:480px){
+      .dest-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    }
+    .dest-card {
+      border-radius: var(--radius);
+      overflow: hidden; position: relative;
+      height: 300px; cursor: pointer;
+      flex-shrink: 0;
+    }
+    .dest-card img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .6s ease;
+    }
+    .dest-card::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,58,92,.85) 0%, rgba(26,58,92,.1) 60%, transparent 100%);
+      transition: opacity .3s;
+    }
+    .dest-card:hover img { transform: scale(1.08); }
+    .dest-card:hover::after { opacity: .9; }
+    .dest-info {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 24px 20px;
+      z-index: 2;
+    }
+    .dest-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem; font-weight: 800; color: #fff;
+      margin-bottom: 4px;
+    }
+    .dest-sub { font-size: .8rem; color: rgba(255,255,255,.8); margin-bottom: 12px; }
+    .dest-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: .78rem; font-weight: 700;
+      color: var(--accent);
+      font-family: 'Poppins', sans-serif;
+      text-transform: uppercase; letter-spacing: .05em;
+    }
+
+    /* ============================================================
+       HERITAGE SECTION
+    ============================================================ */
+    #heritage { background: #fff; }
+    .heritage-img-wrap {
+      border-radius: 20px; overflow: hidden;
+      position: relative; height: 480px;
+    }
+    .heritage-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .heritage-img-badge {
+      position: absolute; bottom: 24px; left: 24px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff; border-radius: var(--radius-sm);
+      padding: 14px 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .heritage-img-badge .big { font-size: 2rem; font-weight: 900; }
+    .heritage-img-badge .small { font-size: .78rem; font-weight: 600; }
+
+    .est-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(232,82,26,.1); color: var(--primary);
+      border: 1px solid rgba(232,82,26,.25);
+      padding: 6px 16px; border-radius: 50px;
+      font-size: .78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .07em;
+      margin-bottom: 20px;
+    }
+    .heritage-h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800; color: var(--secondary);
+      line-height: 1.2; margin-bottom: 20px;
+    }
+    .heritage-p { color: var(--text-muted); line-height: 1.8; margin-bottom: 24px; }
+    .heritage-quote {
+      border-left: 4px solid var(--primary);
+      padding: 16px 20px;
+      background: rgba(232,82,26,.05);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-style: italic; color: var(--secondary);
+      font-size: 1rem; line-height: 1.65;
+      margin-bottom: 32px;
+    }
+    .heritage-quote cite {
+      display: block; font-style: normal;
+      font-size: .82rem; font-weight: 700;
+      color: var(--primary); margin-top: 8px;
+    }
+
+    /* ============================================================
+       TESTIMONIALS
+    ============================================================ */
+    #testimonials { background: var(--bg-light); }
+    .testi-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      height: 100%;
+    }
+    .testi-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .stars { color: var(--accent); font-size: 1.1rem; margin-bottom: 16px; }
+    .testi-quote {
+      font-size: .95rem; color: var(--text);
+      line-height: 1.75; margin-bottom: 24px;
+      font-style: italic;
+    }
+    .testi-quote::before { content: '\201C'; font-size: 2rem; color: var(--primary); line-height: 0; vertical-align: -12px; margin-right: 4px; }
+    .testi-quote::after  { content: '\201D'; font-size: 2rem; color: var(--primary); line-height: 0; vertical-align: -12px; margin-left: 4px; }
+    .testi-author { display: flex; align-items: center; gap: 14px; }
+    .testi-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem; font-weight: 800; color: #fff;
+      flex-shrink: 0;
+    }
+    .testi-name { font-family: 'Poppins', sans-serif; font-size: .9rem; font-weight: 700; color: var(--secondary); }
+    .testi-city { font-size: .78rem; color: var(--text-muted); }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    #contact { background: #F0F4F8; }
+    .contact-info-block { padding: 48px 40px; }
+    .contact-info-block h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem; font-weight: 800;
+      color: var(--secondary); margin-bottom: 28px;
+    }
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      margin-bottom: 24px;
+    }
+    .contact-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), #c94010);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 1rem; flex-shrink: 0;
+    }
+    .contact-item-label { font-size: .78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; }
+    .contact-item-val { font-size: .95rem; color: var(--secondary); font-weight: 600; }
+    .contact-item-val a { color: var(--secondary); }
+    .contact-item-val a:hover { color: var(--primary); }
+
+    .enquiry-form-wrap {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 36px;
+      box-shadow: var(--shadow-md);
+    }
+    .enquiry-form-wrap h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem; font-weight: 800;
+      color: var(--secondary); margin-bottom: 28px;
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-label-custom {
+      display: block; font-size: .78rem; font-weight: 700;
+      color: var(--text-muted); text-transform: uppercase;
+      letter-spacing: .06em; margin-bottom: 6px;
+    }
+    .form-control-custom {
+      width: 100%; border: 1.5px solid #E5E7EB;
+      border-radius: var(--radius-sm);
+      padding: 12px 16px; font-size: .9rem;
+      font-family: 'Nunito Sans', sans-serif;
+      color: var(--text); background: #FAFAFA;
+      transition: border-color .2s;
+    }
+    .form-control-custom:focus {
+      outline: none; border-color: var(--primary); background: #fff;
+    }
+    .wa-submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: #fff; border: none;
+      padding: 14px; border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700; font-size: .95rem;
+      cursor: pointer; transition: var(--transition);
+      box-shadow: 0 4px 20px rgba(37,211,102,.3);
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .wa-submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,211,102,.45); }
+
+    /* ============================================================
+       MAP
+    ============================================================ */
+    #map-section iframe { display: block; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: #0d2340;
+      color: rgba(255,255,255,.8);
+      padding: 70px 0 0;
+    }
+    .footer-brand .brand-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.3rem; font-weight: 800;
+      color: var(--accent); margin-bottom: 12px;
+    }
+    .footer-brand p { font-size: .88rem; line-height: 1.75; margin-bottom: 20px; }
+    .footer-social a {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,.1);
+      color: rgba(255,255,255,.8); font-size: .9rem;
+      margin-right: 8px; transition: var(--transition);
+    }
+    .footer-social a:hover { background: var(--primary); color: #fff; }
+
+    .footer-col h5 {
+      font-family: 'Poppins', sans-serif;
+      font-size: .9rem; font-weight: 700;
+      color: #fff; margin-bottom: 20px;
+      position: relative; padding-bottom: 10px;
+    }
+    .footer-col h5::after {
+      content: ''; position: absolute;
+      bottom: 0; left: 0;
+      width: 30px; height: 2px;
+      background: var(--primary); border-radius: 99px;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a {
+      font-size: .88rem; color: rgba(255,255,255,.7);
+      display: flex; align-items: center; gap: 7px;
+      transition: color .2s, gap .2s;
+    }
+    .footer-links a:hover { color: var(--accent); gap: 10px; }
+    .footer-links a::before { content: '›'; font-size: 1rem; color: var(--primary); }
+    .footer-contact-item { display: flex; gap: 12px; margin-bottom: 14px; font-size: .88rem; }
+    .footer-contact-item i { color: var(--accent); margin-top: 3px; flex-shrink: 0; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 20px 0; margin-top: 50px;
+      font-size: .8rem; color: rgba(255,255,255,.5);
+    }
+    .footer-bottom a { color: rgba(255,255,255,.5); }
+    .footer-bottom a:hover { color: var(--accent); }
+
+    /* ============================================================
+       FLOATING BUTTONS
+    ============================================================ */
+    .float-whatsapp {
+      position: fixed; bottom: 28px; right: 28px; z-index: 1000;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 1.7rem;
+      box-shadow: 0 8px 28px rgba(37,211,102,.5);
+      animation: waFloat 2.8s ease-in-out infinite;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .float-whatsapp::before {
+      content: '';
+      position: absolute; inset: -6px;
+      border-radius: 50%;
+      border: 3px solid rgba(37,211,102,.4);
+      animation: waPulse 2.8s ease-out infinite;
+    }
+    .float-whatsapp:hover { transform: scale(1.12); box-shadow: 0 12px 36px rgba(37,211,102,.65); color: #fff; }
+    @keyframes waFloat {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+    @keyframes waPulse {
+      0%   { transform: scale(1); opacity: .8; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+    /* WA tooltip */
+    .float-whatsapp::after {
+      content: 'Chat with us!';
+      position: absolute; right: 70px; top: 50%; transform: translateY(-50%);
+      background: var(--secondary); color: #fff;
+      font-size: .75rem; font-weight: 700; font-family: 'Poppins', sans-serif;
+      padding: 6px 14px; border-radius: 50px; white-space: nowrap;
+      opacity: 0; pointer-events: none; transition: opacity .2s;
+    }
+    .float-whatsapp:hover::after { opacity: 1; }
+
+    .float-top {
+      position: fixed; bottom: 28px; left: 28px; z-index: 1000;
+      width: 46px; height: 46px; border-radius: 50%;
+      background: var(--secondary);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 1rem;
+      box-shadow: var(--shadow-md);
+      cursor: pointer; opacity: 0;
+      transition: opacity .3s, transform .3s;
+      transform: translateY(20px);
+    }
+    .float-top.visible { opacity: 1; transform: translateY(0); }
+    .float-top:hover { background: var(--primary); }
+
+    /* ============================================================
+       RESPONSIVE ADJUSTMENTS
+    ============================================================ */
+    @media(max-width: 991px) {
+      #hero { min-height: 90vh; padding: 100px 0 60px; }
+      #hero::before { background: rgba(26,58,92,.88); }
+      .quick-search-card { margin-top: 40px; }
+      .stat-divider { display: none; }
+    }
+    @media(max-width: 767px) {
+      .section-pad { padding: 56px 0; }
+      #hero { min-height: auto; padding: 90px 0 50px; }
+      .heritage-img-wrap { height: 320px; margin-bottom: 30px; }
+    }
+    @media(max-width: 575px) {
+      .tb-right { text-align: left !important; margin-top: 4px; }
+      #top-bar .row { gap: 2px; }
+      .hero-btns { flex-direction: column; }
+      .hero-btns a, .hero-btns button { width: 100%; justify-content: center; }
+    }
+
+    /* ============================================================
+       SCROLL REVEAL (simple fade-up)
+    ============================================================ */
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+    .reveal-delay-4 { transition-delay: .4s; }
+    .reveal-delay-5 { transition-delay: .5s; }
+
+    /* ============================================================
+       SECTION TAG
+    ============================================================ */
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(232,82,26,.1); color: var(--primary);
+      border: 1px solid rgba(232,82,26,.25);
+      padding: 6px 16px; border-radius: 50px;
+      font-size: .75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em;
+      margin-bottom: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ============================================================
+     TOP BAR
+============================================================ -->
+<div id="top-bar">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-sm-7 col-12">
+        <a href="tel:+919848124759"><i class="fa-solid fa-phone-volume me-1"></i> +91 98481 24759</a>
+        <span class="mx-2 opacity-50">|</span>
+        <a href="mailto:dodlahemanth@gmail.com"><i class="fa-solid fa-envelope me-1"></i> dodlahemanth@gmail.com</a>
+      </div>
+      <div class="col-sm-5 col-12 tb-right">
+        🏅 Est. 1962 &nbsp;•&nbsp; 64 Years of Sacred Service
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<nav class="navbar navbar-expand-lg" id="mainNav">
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand navbar-brand-wrap" href="index.html">
+      <div class="brand-name">🕉&nbsp;DODLA'S TOURS &amp; TRAVELS</div>
+      <div class="brand-tag">Yatra Specialists Since 1962 &nbsp;|&nbsp; Vijayawada</div>
+    </a>
+
+    <!-- Toggler -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu -->
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+
+        <!-- Pilgrimages Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Pilgrimages</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="fixeddeparturedetailsbb47.html?p_id='23      '"><i class="fa-solid fa-om me-2 opacity-50"></i>108 Divya Desam</a></li>
+            <li><a class="dropdown-item" href="chardham.html"><i class="fa-solid fa-mountain me-2 opacity-50"></i>Chardham Yatra</a></li>
+            <li><a class="dropdown-item" href="amarnathkashmir.html"><i class="fa-solid fa-snowflake me-2 opacity-50"></i>Amarnath &amp; Kashmir</a></li>
+            <li><a class="dropdown-item" href="kailash.html"><i class="fa-solid fa-mountain-sun me-2 opacity-50"></i>Kailash Manasarovar</a></li>
+            <li><a class="dropdown-item" href="fixeddeparturedetails26ad.html?p_id='22      '"><i class="fa-solid fa-water me-2 opacity-50"></i>Ganga Sagar</a></li>
+            <li><a class="dropdown-item" href="fixeddeparturedetails81aa.html?p_id='24      '"><i class="fa-solid fa-temple me-2 opacity-50"></i>Muktinath Nepal</a></li>
+            <li><a class="dropdown-item" href="srilankasankari.html"><i class="fa-solid fa-globe me-2 opacity-50"></i>Sri Lanka Ramayana</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="holidaytours.html">Holidays</a></li>
+        <li class="nav-item"><a class="nav-link" href="fixeddeparture.html">Departures</a></li>
+        <li class="nav-item"><a class="nav-link" href="destination.html">Destinations</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- Book Now -->
+      <a href="contact.html" class="btn-book-now ms-lg-3">
+        <i class="fa-solid fa-calendar-check me-1"></i> Book Now
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO SECTION
+============================================================ -->
+<section id="hero">
+
+  <!-- Background Slides -->
+  <div class="hero-slide active" style="background-image:url('images/Home-4/temple.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('adminpanel/public/news/AARANATH.jpeg')"></div>
+  <div class="hero-slide" style="background-image:url('adminpanel/public/news/1644401451_kashmir-tulip-sld1.jpg')"></div>
+  <div class="hero-slide" style="background-image:url('adminpanel/public/news/pashupatinath-muktinath.jpg')"></div>
+
+  <!-- Slide Dots -->
+  <div class="hero-dots">
+    <button class="hero-dot active" onclick="goSlide(0)"></button>
+    <button class="hero-dot" onclick="goSlide(1)"></button>
+    <button class="hero-dot" onclick="goSlide(2)"></button>
+    <button class="hero-dot" onclick="goSlide(3)"></button>
+  </div>
+
+  <!-- Slide Counter -->
+  <div class="hero-counter"><span id="slideNum">01</span> / 04</div>
+
+  <div class="container">
+    <div class="row align-items-center min-vh-100 py-5">
+
+      <!-- Left: Content -->
+      <div class="col-lg-6 hero-content">
+        <div class="hero-badge reveal">
+          <i class="fa-solid fa-trophy"></i>
+          INDIA'S PREMIER PILGRIMAGE EXPERTS
+        </div>
+
+        <h1 class="hero-h1 reveal reveal-delay-1" id="heroHeading">
+          Journey to<br>the <span>Divine</span>
+        </h1>
+
+        <p class="hero-sub reveal reveal-delay-2" id="heroSub">
+          From Himalayan Shrines to South India Temples — Crafted with Devotion for 64 Years
+        </p>
+
+        <div class="hero-btns reveal reveal-delay-3">
+          <a href="fixeddeparture.html" class="btn-primary-custom">
+            Explore Yatras <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="contact.html" class="btn-outline-custom">
+            <i class="fa-solid fa-headset"></i> Free Consultation
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Quick Search Card -->
+      <div class="col-lg-5 offset-lg-1 mt-5 mt-lg-0 reveal reveal-delay-2">
+        <div class="quick-search-card">
+          <h4><i class="fa-solid fa-magnifying-glass" style="color:var(--primary)"></i> Find Your Yatra</h4>
+
+          <div class="mb-3">
+            <label class="qs-label">Select Destination</label>
+            <select class="qs-select" id="qs-dest">
+              <option value="">Choose Destination…</option>
+              <option>108 Divya Desam (South India)</option>
+              <option>Chardham (Himalayas)</option>
+              <option>Amarnath &amp; Kashmir</option>
+              <option>Kailash Manasarovar</option>
+              <option>Ganga Sagar (West Bengal)</option>
+              <option>Muktinath (Nepal)</option>
+              <option>Sri Lanka (Ramayana Trail)</option>
+              <option>Bhutan</option>
+              <option>Kerala</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="qs-label">Journey Type</label>
+            <select class="qs-select" id="qs-type">
+              <option value="">Select Type…</option>
+              <option>Pilgrimage / Yatra</option>
+              <option>Holiday Package</option>
+              <option>Senior Special Tour</option>
+              <option>Group Tour</option>
+              <option>Customised Tour</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label class="qs-label">Preferred Month</label>
+            <input type="month" class="qs-input" id="qs-date" />
+          </div>
+
+          <button class="qs-btn" onclick="searchPackage()">
+            <i class="fa-solid fa-magnifying-glass me-2"></i> Search Packages
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Wave bottom -->
+  <svg class="hero-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path fill="#1A3A5C" d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z"/>
+  </svg>
+</section>
+
+<!-- ============================================================
+     STATS STRIP
+============================================================ -->
+<section id="stats">
+  <div class="container">
+    <div class="row g-4 align-items-center justify-content-center">
+
+      <div class="col-6 col-md-3">
+        <div class="stat-item">
+          <i class="fa-solid fa-award stat-icon"></i>
+          <span class="stat-number" data-target="64">0</span>
+          <span class="stat-label">+ Years Heritage</span>
+        </div>
+      </div>
+
+      <div class="col-auto d-none d-md-block">
+        <div class="stat-divider"></div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="stat-item">
+          <i class="fa-solid fa-users stat-icon"></i>
+          <span class="stat-number" data-target="50000">0</span>
+          <span class="stat-label">+ Happy Pilgrims</span>
+        </div>
+      </div>
+
+      <div class="col-auto d-none d-md-block">
+        <div class="stat-divider"></div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="stat-item">
+          <i class="fa-solid fa-om stat-icon"></i>
+          <span class="stat-number" data-target="108">0</span>
+          <span class="stat-label">Divya Desams</span>
+        </div>
+      </div>
+
+      <div class="col-auto d-none d-md-block">
+        <div class="stat-divider"></div>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <div class="stat-item">
+          <i class="fa-solid fa-star stat-icon"></i>
+          <span class="stat-number" data-target="100">0</span>
+          <span class="stat-label">% Satisfaction</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FEATURED TOURS
+============================================================ -->
+<section id="tours" class="section-pad">
+  <div class="container">
+    <div class="text-center mb-2 reveal">
+      <span class="section-tag"><i class="fa-solid fa-route"></i> Featured Packages</span>
+    </div>
+    <div class="text-center reveal reveal-delay-1">
+      <h2 class="section-title">Our <span>Sacred Journeys</span></h2>
+    </div>
+    <div class="d-flex justify-content-center reveal reveal-delay-1">
+      <div class="title-underline"></div>
+    </div>
+    <p class="section-sub text-center mx-auto reveal reveal-delay-2" style="max-width:580px;">
+      Hand-crafted yatras with impeccable logistics, devotional care, and 64 years of route mastery.
+    </p>
+
+    <div class="row g-4 mt-2">
+
+      <!-- Card 1 -->
+      <div class="col-lg-4 col-md-6 reveal reveal-delay-1">
+        <div class="tour-card">
+          <div class="tour-img-wrap">
+            <img src="adminpanel/public/news/SWAMY.jpeg" alt="108 Divya Desam Yatra" class="tour-img" loading="lazy" onerror="this.src='images/Home-4/temple.jpg'" />
+            <span class="tour-badge-category">Pilgrimage</span>
+            <span class="tour-badge-duration"><i class="fa-regular fa-clock me-1"></i>17 Days</span>
+          </div>
+          <div class="tour-body">
+            <h3 class="tour-title">108 Divya Desam Yatra</h3>
+            <p class="tour-desc">A sacred circuit through all 108 Vishnu temples across South India — the ultimate Vaishnava pilgrimage.</p>
+            <div class="tour-footer">
+              <div class="tour-price">
+                <small>Starting From</small>
+                ₹51,998
+              </div>
+              <a href="fixeddeparturedetailsbb47.html?p_id='23      '" class="tour-link">
+                View Details <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-lg-4 col-md-6 reveal reveal-delay-2">
+        <div class="tour-card">
+          <div class="tour-img-wrap">
+            <img src="images/Home-4/temple.jpg" alt="Chardham Yatra" class="tour-img" loading="lazy" />
+            <span class="tour-badge-category">Himalayan Yatra</span>
+            <span class="tour-badge-duration"><i class="fa-regular fa-clock me-1"></i>14 Days</span>
+          </div>
+          <div class="tour-body">
+            <h3 class="tour-title">Chardham Yatra</h3>
+            <p class="tour-desc">Badrinath, Kedarnath, Gangotri &amp; Yamunotri — the holiest Hindu circuit in the Garhwal Himalayas, bespoke for you.</p>
+            <div class="tour-footer">
+              <div class="tour-price">
+                <small>Package</small>
+                Bespoke
+              </div>
+              <a href="chardham.html" class="tour-link">
+                View Details <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-lg-4 col-md-6 reveal reveal-delay-3">
+        <div class="tour-card">
+          <div class="tour-img-wrap">
+            <img src="adminpanel/public/news/AARANATH.jpeg" alt="Amarnath & Kashmir" class="tour-img" loading="lazy" onerror="this.src='images/Home-4/temple.jpg'" />
+            <span class="tour-badge-category">Pilgrimage + Leisure</span>
+            <span class="tour-badge-duration"><i class="fa-regular fa-clock me-1"></i>16 Days</span>
+          </div>
+          <div class="tour-body">
+            <h3 class="tour-title">Amarnath &amp; Kashmir</h3>
+            <p class="tour-desc">Seek Lord Shiva's blessings at the Amarnath ice lingam combined with the breathtaking Kashmir Valley experience.</p>
+            <div class="tour-footer">
+              <div class="tour-price">
+                <small>Departures</small>
+                June / July
+              </div>
+              <a href="amarnathkashmir.html" class="tour-link">
+                View Details <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-lg-4 col-md-6 reveal reveal-delay-1">
+        <div class="tour-card">
+          <div class="tour-img-wrap">
+            <img src="adminpanel/public/news/Gangasagar-Cruise-1-870x555.jpeg" alt="Ganga Sagar" class="tour-img" loading="lazy" onerror="this.src='images/Home-4/temple.jpg'" />
+            <span class="tour-badge-category">Pilgrimage</span>
+            <span class="tour-badge-duration"><i class="fa-regular fa-clock me-1"></i>14 Days</span>
+          </div>
+          <div class="tour-body">
+            <h3 class="tour-title">Ganga Sagar &amp; East India</h3>
+            <p class="tour-desc">The holy Gangasagar Mela where the Ganga meets the sea — combined with cultural gems of Eastern India.</p>
+            <div class="tour-footer">
+              <div class="tour-price">
+                <small>Starting From</small>
+                ₹46,998
+              </div>
+              <a href="fixeddeparturedetails26ad.html?p_id='22      '" class="tour-link">
+                View Details <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-lg-4 col-md-6 reveal reveal-delay-2">
+        <div class="tour-card">
+          <div class="tour-img-wrap">
+            <img src="adminpanel/public/news/pashupatinath-muktinath.jpg" alt="Muktinath Nepal" class="tour-img" loading="lazy" onerror="this.src='images/Home-4/temple.jpg'" />
+            <span class="tour-badge-category">International</span>
+            <span class="tour-badge-duration"><i class="fa-regular fa-clock me-1"></i>8 Days</span>
+          </div>
+          <div class="tour-body">
+            <h3 class="tour-title">Muktinath Nepal (Flight)</h3>
+            <p class="tour-desc">Fly to Pokhara, seek moksha at Muktinath &amp; Pashupatinath — a spiritually profound Nepal yatra with flight inclusive.</p>
+            <div class="tour-footer">
+              <div class="tour-price">
+                <small>Starting From</small>
+                ₹74,999
+              </div>
+              <a href="fixeddeparturedetails81aa.html?p_id='24      '" class="tour-link">
+                View Details <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-lg-4 col-md-6 reveal reveal-delay-3">
+        <div class="tour-card">
+          <div class="tour-img-wrap">
+            <img src="adminpanel/public/news/Colombo-Sri-Lanka (2).webp" alt="Sri Lanka Ramayana Trail" class="tour-img" loading="lazy" onerror="this.src='images/Home-4/temple.jpg'" />
+            <span class="tour-badge-category">International</span>
+            <span class="tour-badge-duration"><i class="fa-regular fa-clock me-1"></i>10 Days</span>
+          </div>
+          <div class="tour-body">
+            <h3 class="tour-title">Sri Lanka Ramayana Trail</h3>
+            <p class="tour-desc">Follow Lord Rama's footsteps — Ashok Vatika, Sita Mata Temple, and Rameswaram — a mythological journey across the Palk Strait.</p>
+            <div class="tour-footer">
+              <div class="tour-price">
+                <small>Starting From</small>
+                ₹66,996
+              </div>
+              <a href="srilankasankari.html" class="tour-link">
+                View Details <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /row -->
+
+    <div class="text-center mt-5 reveal">
+      <a href="fixeddeparture.html" class="btn-primary-custom">
+        <i class="fa-solid fa-calendar-alt"></i> View All Departures
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHY CHOOSE US
+============================================================ -->
+<section id="why" class="section-pad">
+  <div class="container">
+    <div class="text-center mb-2 reveal">
+      <span class="section-tag"><i class="fa-solid fa-star"></i> Why Dodla's</span>
+    </div>
+    <div class="text-center reveal reveal-delay-1">
+      <h2 class="section-title">The <span>Dodla Difference</span></h2>
+    </div>
+    <div class="d-flex justify-content-center reveal reveal-delay-1">
+      <div class="title-underline"></div>
+    </div>
+    <p class="section-sub text-center mx-auto reveal reveal-delay-2">
+      Six pillars of unmatched service that have earned 50,000+ happy pilgrims over 64 years.
+    </p>
+
+    <div class="row g-4 mt-3">
+
+      <div class="col-lg-4 col-md-6 reveal reveal-delay-1">
+        <div class="feature-card">
+          <div class="feature-icon-wrap">🍛</div>
+          <div class="feature-title">Pure Satvik Food</div>
+          <p class="feature-desc">Traditional South Indian cooks on every yatra — wholesome, fresh, vegetarian meals prepared with devotion at every destination.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 reveal reveal-delay-2">
+        <div class="feature-card">
+          <div class="feature-icon-wrap">🏨</div>
+          <div class="feature-title">Temple-Side Stays</div>
+          <p class="feature-desc">Carefully selected accommodations near sacred praharams and temple complexes so you never miss an early darshan.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 reveal reveal-delay-3">
+        <div class="feature-card">
+          <div class="feature-icon-wrap">👴</div>
+          <div class="feature-title">Senior Care</div>
+          <p class="feature-desc">Paced darshan schedules, step-free assistance, dedicated attendants, and medical kit — your elders travel in total comfort.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 reveal reveal-delay-1">
+        <div class="feature-card">
+          <div class="feature-icon-wrap">🚌</div>
+          <div class="feature-title">Luxury AC Coaches</div>
+          <p class="feature-desc">2×2 pushback fleet of luxury Volvo and Mercedes coaches driven by expert mountain drivers with impeccable safety records.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 reveal reveal-delay-2">
+        <div class="feature-card">
+          <div class="feature-icon-wrap">📋</div>
+          <div class="feature-title">Expert Planning</div>
+          <p class="feature-desc">64 years of route mastery — every permit, prasadam timing, local contact, and contingency plan mapped and ready before departure.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 reveal reveal-delay-3">
+        <div class="feature-card">
+          <div class="feature-icon-wrap">🤝</div>
+          <div class="feature-title">Personal Service</div>
+          <p class="feature-desc">Director Sri Dodla Hemanth Kumar leads each tour personally — bringing passion, accountability, and a family spirit to every yatra.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DESTINATIONS SHOWCASE
+============================================================ -->
+<section id="destinations" class="section-pad">
+  <div class="container">
+    <div class="text-center mb-2 reveal">
+      <span class="section-tag"><i class="fa-solid fa-earth-asia"></i> Explore India &amp; Beyond</span>
+    </div>
+    <div class="text-center reveal reveal-delay-1">
+      <h2 class="section-title">Explore <span>Destinations</span></h2>
+    </div>
+    <div class="d-flex justify-content-center reveal reveal-delay-1">
+      <div class="title-underline"></div>
+    </div>
+
+    <div class="dest-grid mt-4 reveal reveal-delay-2">
+
+      <div class="dest-card">
+        <img src="adminpanel/public/news/1644401451_kashmir-tulip-sld1.jpg" alt="Kashmir" loading="lazy" onerror="this.src='images/Home-4/temple.jpg'" />
+        <div class="dest-info">
+          <div class="dest-name">Kashmir</div>
+          <div class="dest-sub">Amarnath Yatra &amp; Valley</div>
+          <a href="amarnathkashmir.html" class="dest-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="dest-card">
+        <img src="adminpanel/public/news/bhutan-paro-taktsang-buddhist-temple-himalaya-THUMB-scaled.jpg" alt="Bhutan" loading="lazy" onerror="this.src='images/Home-4/temple.jpg'" />
+        <div class="dest-info">
+          <div class="dest-name">Bhutan</div>
+          <div class="dest-sub">Land of the Thunder Dragon</div>
+          <a href="destination.html" class="dest-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="dest-card">
+        <img src="adminpanel/public/news/Kerala-2.jpg" alt="Kerala" loading="lazy" onerror="this.src='images/Home-4/temple.jpg'" />
+        <div class="dest-info">
+          <div class="dest-name">Kerala</div>
+          <div class="dest-sub">God's Own Country</div>
+          <a href="holidaytours.html" class="dest-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="dest-card">
+        <img src="adminpanel/public/news/Colombo-Sri-Lanka (2).webp" alt="Sri Lanka" loading="lazy" onerror="this.src='images/Home-4/temple.jpg'" />
+        <div class="dest-info">
+          <div class="dest-name">Sri Lanka</div>
+          <div class="dest-sub">Ramayana Trail</div>
+          <a href="srilankasankari.html" class="dest-link">Explore <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div><!-- /dest-grid -->
+  </div>
+</section>
+
+<!-- ============================================================
+     HERITAGE SECTION
+============================================================ -->
+<section id="heritage" class="section-pad">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <!-- Image -->
+      <div class="col-lg-6 reveal">
+        <div class="heritage-img-wrap">
+          <img src="images/Home-4/temple.jpg" alt="Dodla's Heritage" />
+          <div class="heritage-img-badge">
+            <div class="big">64</div>
+            <div class="small">Years of Sacred Service</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="col-lg-6 reveal reveal-delay-2">
+        <div class="est-pill">
+          <i class="fa-solid fa-award"></i> Est. 1962
+        </div>
+
+        <h2 class="heritage-h2">64 Years of <span style="color:var(--primary)">Sacred Service</span></h2>
+
+        <p class="heritage-p">
+          In 1962, Sri <strong>Dodla Ramarao</strong> founded what would become Andhra Pradesh's most trusted pilgrimage company — driven by a simple belief that every devotee deserves a dignified, comfortable, and spiritually enriching journey to the divine.
+        </p>
+        <p class="heritage-p">
+          Today, his son <strong>Sri Dodla Hemanth Kumar</strong> carries that torch forward with the same devotion and a modern touch — having escorted over 50,000 pilgrims across India, Nepal, Sri Lanka, and beyond. Every yatra is led personally by him, maintaining the family promise of uncompromising care.
+        </p>
+
+        <blockquote class="heritage-quote">
+          "We don't just plan tours — we create sacred memories. Every pilgrim we accompany is a member of our family, and we bring them home safely, spiritually fulfilled."
+          <cite>— Sri Dodla Hemanth Kumar, Director &amp; Tour Leader</cite>
+        </blockquote>
+
+        <a href="about.html" class="btn-primary-custom">
+          Learn Our Story <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+============================================================ -->
+<section id="testimonials" class="section-pad">
+  <div class="container">
+    <div class="text-center mb-2 reveal">
+      <span class="section-tag"><i class="fa-solid fa-heart"></i> Pilgrim Stories</span>
+    </div>
+    <div class="text-center reveal reveal-delay-1">
+      <h2 class="section-title">What Our <span>Pilgrims Say</span></h2>
+    </div>
+    <div class="d-flex justify-content-center reveal reveal-delay-1">
+      <div class="title-underline"></div>
+    </div>
+
+    <div class="row g-4 mt-3">
+
+      <div class="col-lg-4 col-md-6 reveal reveal-delay-1">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="testi-quote">
+            The 108 Divya Desam yatra was a life-changing spiritual experience. Everything was perfectly arranged — from the satvik meals to the comfortable coaches. Truly world-class service.
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar">L</div>
+            <div>
+              <div class="testi-name">Lakshmi Devi</div>
+              <div class="testi-city"><i class="fa-solid fa-location-dot me-1" style="color:var(--primary)"></i>Hyderabad</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 reveal reveal-delay-2">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="testi-quote">
+            Dodla's team treated my elderly parents like family. The satvik food, comfortable coaches, and step-by-step darshan assistance made the journey incredibly peaceful and joyful.
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar">R</div>
+            <div>
+              <div class="testi-name">Ravi Kumar</div>
+              <div class="testi-city"><i class="fa-solid fa-location-dot me-1" style="color:var(--primary)"></i>Vijayawada</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 reveal reveal-delay-3">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="testi-quote">
+            Third trip with Dodla's! Chardham was absolutely breathtaking. Best tour operator in Andhra Pradesh hands down. Hemanth Kumar garu's personal attention makes all the difference.
+          </p>
+          <div class="testi-author">
+            <div class="testi-avatar">S</div>
+            <div>
+              <div class="testi-name">Suresh Rao</div>
+              <div class="testi-city"><i class="fa-solid fa-location-dot me-1" style="color:var(--primary)"></i>Guntur</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT / ENQUIRY
+============================================================ -->
+<section id="contact" class="section-pad">
+  <div class="container">
+    <div class="text-center mb-2 reveal">
+      <span class="section-tag"><i class="fa-solid fa-paper-plane"></i> Get In Touch</span>
+    </div>
+    <div class="text-center reveal reveal-delay-1">
+      <h2 class="section-title">Plan Your <span>Sacred Journey</span></h2>
+    </div>
+    <div class="d-flex justify-content-center reveal reveal-delay-1">
+      <div class="title-underline"></div>
+    </div>
+
+    <div class="row g-0 mt-4 align-items-stretch reveal reveal-delay-2">
+
+      <!-- Left: Contact Info -->
+      <div class="col-lg-5">
+        <div class="contact-info-block h-100" style="background:var(--secondary); border-radius:20px 0 0 20px; color:#fff;">
+          <h3 style="color:#fff;">Reach Us Directly</h3>
+          <p style="color:rgba(255,255,255,.75); font-size:.9rem; margin-bottom:30px;">
+            Our team is available 7 days a week to help you plan the perfect spiritual journey.
+          </p>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <div class="contact-item-label" style="color:rgba(255,255,255,.55);">Phone</div>
+              <div class="contact-item-val" style="color:#fff;">
+                <a href="tel:+919848124759" style="color:#fff;">+91 98481 24759</a><br>
+                <a href="tel:+919494531001" style="color:rgba(255,255,255,.8);">+91 94945 31001</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon" style="background:linear-gradient(135deg,#25D366,#128C7E)"><i class="fa-brands fa-whatsapp"></i></div>
+            <div>
+              <div class="contact-item-label" style="color:rgba(255,255,255,.55);">WhatsApp</div>
+              <div class="contact-item-val">
+                <a href="https://wa.me/919848124759" target="_blank" style="color:#25D366; font-weight:700;">+91 98481 24759</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <div class="contact-item-label" style="color:rgba(255,255,255,.55);">Email</div>
+              <div class="contact-item-val">
+                <a href="mailto:dodlahemanth@gmail.com" style="color:var(--accent);">dodlahemanth@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-map-marker-alt"></i></div>
+            <div>
+              <div class="contact-item-label" style="color:rgba(255,255,255,.55);">Office</div>
+              <div class="contact-item-val" style="color:rgba(255,255,255,.85);">
+                Besant Road / Bandar Road,<br>Governorpet, Vijayawada – 520002<br>Andhra Pradesh, India
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Enquiry Form -->
+      <div class="col-lg-7">
+        <div class="enquiry-form-wrap h-100" style="border-radius:0 20px 20px 0;">
+          <h3>Send an Enquiry</h3>
+
+          <div class="form-group">
+            <label class="form-label-custom">Your Name</label>
+            <input type="text" class="form-control-custom" id="enq-name" placeholder="Sri Ram Kumar" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label-custom">Mobile Number</label>
+            <input type="tel" class="form-control-custom" id="enq-phone" placeholder="+91 98765 43210" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label-custom">Tour Interest</label>
+            <select class="form-control-custom" id="enq-tour">
+              <option value="">Select a Package…</option>
+              <option>108 Divya Desam Yatra</option>
+              <option>Chardham Yatra</option>
+              <option>Amarnath &amp; Kashmir</option>
+              <option>Kailash Manasarovar</option>
+              <option>Ganga Sagar &amp; East India</option>
+              <option>Muktinath Nepal</option>
+              <option>Sri Lanka Ramayana Trail</option>
+              <option>Bhutan</option>
+              <option>Kerala Holiday</option>
+              <option>Custom / Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label-custom">Your Message</label>
+            <textarea class="form-control-custom" id="enq-message" rows="4" placeholder="Tell us your preferred travel dates, group size, and any special requirements…"></textarea>
+          </div>
+
+          <button class="wa-submit-btn" onclick="sendWhatsApp()">
+            <i class="fa-brands fa-whatsapp fa-lg"></i>
+            Send via WhatsApp
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GOOGLE MAP
+============================================================ -->
+<section id="map-section">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15301.064679804416!2d80.6137357!3d16.5126548!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x57604570fb2b2d34!2sDodla's+Tours+%26+Travels!5e0!3m2!1sen!2sin!4v1523960097093"
+    width="100%"
+    height="420"
+    style="border:0; display:block;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="Dodla's Tours & Travels Location">
+  </iframe>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- Brand -->
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-brand">
+          <div class="brand-name">🕉&nbsp;DODLA'S TOURS &amp; TRAVELS</div>
+          <p>India's most trusted pilgrimage specialists since 1962. Guided by devotion, driven by service — bringing pilgrims home spiritually fulfilled for over six decades.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/919848124759" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="mailto:dodlahemanth@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+            <a href="tel:+919848124759"><i class="fa-solid fa-phone"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sacred Journeys -->
+      <div class="col-lg-2 col-md-6 footer-col">
+        <h5>Sacred Journeys</h5>
+        <ul class="footer-links">
+          <li><a href="fixeddeparturedetailsbb47.html?p_id='23      '">108 Divya Desam</a></li>
+          <li><a href="chardham.html">Chardham Yatra</a></li>
+          <li><a href="amarnathkashmir.html">Amarnath &amp; Kashmir</a></li>
+          <li><a href="kailash.html">Kailash Manasarovar</a></li>
+          <li><a href="fixeddeparturedetails26ad.html?p_id='22      '">Ganga Sagar</a></li>
+          <li><a href="fixeddeparturedetails81aa.html?p_id='24      '">Muktinath Nepal</a></li>
+          <li><a href="srilankasankari.html">Sri Lanka Ramayana</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-6 footer-col">
+        <h5>Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="holidaytours.html">Holiday Tours</a></li>
+          <li><a href="fixeddeparture.html">Fixed Departures</a></li>
+          <li><a href="destination.html">Destinations</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-lg-4 col-md-6 footer-col">
+        <h5>Contact Us</h5>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-map-marker-alt"></i>
+          <span>Besant Road / Bandar Road, Governorpet,<br>Vijayawada – 520002, Andhra Pradesh</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>
+            <a href="tel:+919848124759" style="color:rgba(255,255,255,.8)">+91 98481 24759</a><br>
+            <a href="tel:+919494531001" style="color:rgba(255,255,255,.65)">+91 94945 31001</a>
+          </span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span><a href="mailto:dodlahemanth@gmail.com" style="color:var(--accent)">dodlahemanth@gmail.com</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-brands fa-whatsapp" style="color:#25D366"></i>
+          <span><a href="https://wa.me/919848124759" target="_blank" style="color:#25D366; font-weight:700">Chat on WhatsApp</a></span>
+        </div>
+      </div>
+
+    </div><!-- /row -->
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          &copy; 2024 Dodla's Tours &amp; Travels. All Rights Reserved. Est. 1962, Vijayawada.
+        </div>
+        <div class="col-md-6 text-md-end mt-2 mt-md-0">
+          <a href="#">Terms &amp; Conditions</a>
+          <span class="mx-2">|</span>
+          <a href="#">Privacy Policy</a>
+          <span class="mx-2">|</span>
+          <a href="#">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     FLOATING BUTTONS
+============================================================ -->
+<a href="https://wa.me/919848124759" target="_blank" class="float-whatsapp" title="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<button class="float-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to Top">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<!-- ============================================================
+     SCRIPTS
+============================================================ -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+/* =====================================================
+   HERO AUTO SLIDESHOW
+===================================================== */
+const heroSlides = document.querySelectorAll('.hero-slide');
+const heroDots   = document.querySelectorAll('.hero-dot');
+const heroSlideNum = document.getElementById('slideNum');
+
+const heroTexts = [
+  { h: 'Journey to<br>the <span>Divine</span>',   sub: 'From Himalayan Shrines to South India Temples — Crafted with Devotion for 64 Years' },
+  { h: 'Amarnath &amp;<br>the <span>Sacred Himalayas</span>', sub: 'Trek to the mystic Shiva Ice Lingam — a journey that transforms the soul.' },
+  { h: 'Kashmir —<br><span>Heaven on Earth</span>',           sub: 'Srinagar Dal Lake, Gulmarg meadows, and pristine tulip valleys await you.' },
+  { h: 'Muktinath &amp;<br>the <span>Nepal Himalayas</span>', sub: 'Pokhara, Pashupatinath, and the sacred Muktinath temple by air.' }
+];
+
+let currentSlide = 0;
+
+function goSlide(n) {
+  heroSlides[currentSlide].classList.remove('active');
+  heroDots[currentSlide].classList.remove('active');
+  currentSlide = (n + heroSlides.length) % heroSlides.length;
+  heroSlides[currentSlide].classList.add('active');
+  heroDots[currentSlide].classList.add('active');
+  if (heroSlideNum) heroSlideNum.textContent = String(currentSlide + 1).padStart(2,'0');
+  // Update heading & subtext with fade
+  const hEl = document.getElementById('heroHeading');
+  const sEl = document.getElementById('heroSub');
+  if (hEl && sEl) {
+    hEl.style.opacity = '0'; sEl.style.opacity = '0';
+    setTimeout(() => {
+      hEl.innerHTML = heroTexts[currentSlide].h;
+      sEl.textContent = heroTexts[currentSlide].sub.replace(/&amp;/g, '&');
+      hEl.style.opacity = '1'; sEl.style.opacity = '1';
+    }, 400);
+  }
+}
+
+// Auto-advance every 5 seconds
+setInterval(() => goSlide(currentSlide + 1), 5000);
+
+// Add CSS transition for text fade
+document.getElementById('heroHeading').style.transition = 'opacity .4s ease';
+document.getElementById('heroSub').style.transition = 'opacity .4s ease';
+
+/* =====================================================
+   NAVBAR SHADOW ON SCROLL
+===================================================== */
+const mainNav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  mainNav.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+/* =====================================================
+   BACK TO TOP VISIBILITY
+===================================================== */
+const backToTopBtn = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTopBtn.classList.toggle('visible', window.scrollY > 400);
+});
+
+/* =====================================================
+   SCROLL REVEAL (IntersectionObserver)
+===================================================== */
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+revealEls.forEach(el => revealObserver.observe(el));
+
+/* =====================================================
+   COUNTER ANIMATION
+===================================================== */
+function animateCounter(el, target, duration) {
+  const start = 0;
+  const startTime = performance.now();
+  const suffix = target >= 1000 ? '+' : '';
+  const displayTarget = target >= 1000 ? (target / 1000).toFixed(0) + 'K' : target;
+
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.floor(start + (target - start) * eased);
+
+    if (target >= 1000) {
+      el.textContent = (current >= 1000 ? Math.floor(current / 1000) + 'K' : current);
+    } else {
+      el.textContent = current;
+    }
+
+    if (progress < 1) requestAnimationFrame(update);
+    else el.textContent = target >= 1000 ? Math.floor(target/1000) + 'K' : target;
+  }
+  requestAnimationFrame(update);
+}
+
+const statNumbers = document.querySelectorAll('.stat-number[data-target]');
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const target = parseInt(e.target.dataset.target);
+      animateCounter(e.target, target, 2000);
+      statsObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+statNumbers.forEach(el => statsObserver.observe(el));
+
+/* =====================================================
+   QUICK SEARCH
+===================================================== */
+function searchPackage() {
+  const dest = document.getElementById('qs-dest').value;
+  const type = document.getElementById('qs-type').value;
+  const date = document.getElementById('qs-date').value;
+
+  if (!dest && !type) {
+    alert('Please select a destination or journey type to search.');
+    return;
+  }
+
+  // Build WhatsApp message
+  const msg = `Hello Dodla's Tours! I'm interested in a package.\n\nDestination: ${dest || 'Not specified'}\nJourney Type: ${type || 'Not specified'}\nPreferred Month: ${date || 'Flexible'}\n\nPlease share more details.`;
+  window.open('https://wa.me/919848124759?text=' + encodeURIComponent(msg), '_blank');
+}
+
+/* =====================================================
+   WHATSAPP ENQUIRY FORM
+===================================================== */
+function sendWhatsApp() {
+  const name    = document.getElementById('enq-name').value.trim();
+  const phone   = document.getElementById('enq-phone').value.trim();
+  const tour    = document.getElementById('enq-tour').value;
+  const message = document.getElementById('enq-message').value.trim();
+
+  if (!name || !phone) {
+    alert('Please fill in your Name and Phone number.');
+    return;
+  }
+
+  const wa = `Hello Dodla's Tours & Travels!\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Tour Interest:* ${tour || 'Not selected'}\n*Message:* ${message || '—'}\n\nPlease send me more details. 🙏`;
+  window.open('https://wa.me/919848124759?text=' + encodeURIComponent(wa), '_blank');
+}
+
+/* =====================================================
+   SMOOTH DROPDOWN (mobile collapse)
+===================================================== */
+document.querySelectorAll('.navbar-nav .dropdown-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navMenu = document.getElementById('navMenu');
+    if (navMenu.classList.contains('show')) {
+      navbarToggler.click();
+    }
+  });
+});
+</script>
+
+</body>
+</html>
